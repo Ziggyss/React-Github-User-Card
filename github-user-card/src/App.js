@@ -18,11 +18,7 @@ class App extends React.Component {
         bio: "",
         avatar_url: ""
       },
-      followers: {
-        login: "",
-        name: "",
-        avatar_url: ""
-      }
+      followers: []
     };
   }
 

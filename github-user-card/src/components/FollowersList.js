@@ -3,15 +3,14 @@ import Follower from "./Follower";
 
 class FollowersList extends React.Component {
   render() {
-    return this.state.followers.map(follower => (
-      <FollowersList
+    return this.props.followers.map(follower => (
+      <Follower
         key={follower.id}
         image={follower.avatar_url}
-        name={follower.name}
         login={follower.login}
       />
     ));
   }
 }
 
-export default Follower;
+export default FollowersList;
