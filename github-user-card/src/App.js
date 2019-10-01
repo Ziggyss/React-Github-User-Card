@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import User from "./components/User";
+import FollowersList from "./components/FollowersList";
 import axios from "axios";
 
 const userApi = "https://api.github.com/users/Ziggyss";
@@ -15,7 +16,12 @@ class App extends React.Component {
         name: "",
         id: "",
         bio: "",
-        followers: []
+        avatar_url: ""
+      },
+      followers: {
+        login: "",
+        name: "",
+        avatar_url: ""
       }
     };
   }
@@ -25,7 +31,6 @@ class App extends React.Component {
     this.followersPromise = axios.get(followersApi);
     Promise.all([this.userPromise, this.followersPromise])
       .then(([userAxiosResponse, followersAxiosResponse]) => {
-        debugger;
         this.setState({
           user: userAxiosResponse.data,
           followers: followersAxiosResponse.data
@@ -39,9 +44,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>GitHub User Card</h1>
-        <User
-          user={this.state.user}
-        />
+        <User user={this.state.user} />
+        <FollowersList followers={this.state.followers} />
       </div>
     );
   }

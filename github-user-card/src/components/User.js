@@ -7,6 +7,10 @@ class User extends React.Component {
         <h2>User: {this.props.user.login}</h2>
         <p>Name: {this.props.user.name}</p>
         <p>Bio: {this.props.user.bio}</p>
+        <img src={this.props.user.avatar_url} alt={this.props.user.name} />
+        <div>
+            Followers: {this.props.user.followers}
+        </div>
       </div>
     );
   }
