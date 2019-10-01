@@ -5,6 +5,9 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
 `;
 
 const Styledh2 = styled.h2`
